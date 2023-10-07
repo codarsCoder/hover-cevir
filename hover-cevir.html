@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .kart {
+            width: 200px;
+            height: 300px;
+            perspective: 1000px;
+            position: relative;
+        }
+
+        .on-yuz, .arka-yuz {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            backface-visibility: hidden;
+            transition: transform 0.5s;
+        }
+
+        .on-yuz {
+            background-color: #3498db;
+            transform: rotateY(0deg);
+        }
+
+        .arka-yuz {
+            background-color: #e74c3c;
+            transform: rotateY(180deg);
+        }
+
+        .kart:hover .on-yuz {
+            transform: rotateY(-180deg);
+        }
+
+        .kart:hover .arka-yuz {
+            transform: rotateY(0deg);
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            color: white;
+        }
+    </style>
+    <title>Arkası Dönen Kart</title>
+</head>
+<body>
+    <div class="kart">
+        <div class="on-yuz">
+            <h1>Ön Yüz</h1>
+        </div>
+        <div class="arka-yuz">
+            <h1>Arka Yüz</h1>
+            <span class="close-button" onclick="rotateToFront(this)">X</span>
+        </div>
+    </div>
+
+    <script>
+        function rotateToFront() {
+            const onYuzElement = document.querySelector('.on-yuz');
+            const arkaYuzElement = document.querySelector('.arka-yuz');
+            onYuzElement.style.transform = 'rotateY(0deg)';
+            arkaYuzElement.style.transform = 'rotateY(180deg)';
+    
+           
+        }
+    </script>
+</body>
+</html>
