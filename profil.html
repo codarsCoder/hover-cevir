@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            background-color: rgb(66, 65, 65);
+        }
+
+        .card_wrapper {
+            height: 400px;
+            width: 250px;
+            box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+
+            align-items: space-around;
+            background-color: rgb(66, 65, 65);
+            margin: 100px auto;
+
+        }
+
+        .ust {
+            height: 145px;
+            width: 250px;
+            background-color: blueviolet;
+            border-radius: 10px;
+        }
+
+        .alt {
+            height: 245px;
+            width: 250px;
+            background-color: rgb(154, 238, 38);
+            position: relative;
+            border-radius: 10px;
+        }
+
+        .fiyat {
+
+            height: 75px;
+            width: 130px;
+            background-color: rgb(180, 17, 17);
+            position: absolute;
+            top: -48px;
+            left: 0px;
+            border-top: 10px solid #424141;
+            border-right: 10px solid #424141;
+            border-bottom: 10px solid #424141;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        .fiyat::after {
+            content: '';
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background-color: #42414100;
+            top: 18px;
+            right: -19px;
+            border-radius: 50%;
+            border-right: 10px solid #424141;
+            border-top: 10px solid #424141;
+        }
+        .fiyat::before {
+            content: '';
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background-color: #42414100;
+            top: 33px;
+            right: -19px;
+            border-radius: 50%;
+            border-right: 10px solid #424141;
+            border-top: 10px solid #424141;
+        }
+
+        .ara {
+            height: 10px;
+            width: 250px;
+            background-color: rgb(66, 65, 65);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card_wrapper">
+        <div class="ust"></div>
+        <div class="ara"></div>
+        <div class="alt">
+            <div class="fiyat"></div>
+        </div>
+    </div>
+</body>
+
+</html>
